@@ -17,6 +17,9 @@ function processAddress(){
   
   for (addressRow = 1; addressRow <= cells.getNumRows(); addressRow++) {
     var address = cells.getCell(addressRow, addressColumn).getValue();
+    
+    if (!address) {continue}
+    
     obscureAddress(cells, addressRow, address);
   }
 }
@@ -25,17 +28,26 @@ function obscureAddress(cells, row, address){
   // pluck first set of digits at the beginning of the address string
   var myregexp = /^\d+/g;
   var match = myregexp.exec(address);
-  var street_num = match[0];
-
-  // replaces last 2 digits with zeroes
-  var street_num_obscured = street_num.slice(0, -2) + "00";
-
-  // return obscured address
-  var obscured_address = address.replace(street_num, street_num_obscured);
-
-  insertDataIntoSheet(cells, row, [
-    [outputColumn, obscured_address]
-  ]);
+  
+  if (!match) {
+    insertDataIntoSheet(cells, row, [
+      [outputColumn, address]
+    ]);
+  }
+  else {
+  
+    var street_num = match[0];
+  
+    // replaces last 2 digits with zeroes
+    var street_num_obscured = street_num.slice(0, -2) + "00";
+  
+    // return obscured address
+    var obscured_address = address.replace(street_num, street_num_obscured);
+  
+    insertDataIntoSheet(cells, row, [
+      [outputColumn, obscured_address]
+    ]);
+  }
 }
   
 /**
