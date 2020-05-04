@@ -10,6 +10,8 @@ Add this Script to your Google Sheet to get a menu item for obscuring addresses 
 2. Select two columns for each address you want obscured: the source address and the empty column to put the result.
 3. Google Sheets script will ask for permission to run the first time
 
+![Obscure Address demo](https://raw.githubusercontent.com/derekeder/obscure-address-google-sheets/master/images/obscure-address.gif)
+
 ## Adding this script to your own Google Sheet
 
 1. In your Google Sheet, click on Tools => Script editor
