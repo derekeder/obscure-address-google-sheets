@@ -21,9 +21,10 @@ Add this Script to your Google Sheet to get a menu item for obscuring addresses 
 5. Reload your Google Sheet and you will see a menu item at the top called 'Obscure Address'
 6. Follow the steps in **Getting Started** above!
 
-## Authors
+## Authors & Credits
 
-* Derek Eder @derekeder
+* Primary author: Derek Eder @derekeder
+* Special thanks & insipration from @DataVizForAll, specifically their [google-sheets-geocoder](https://github.com/DataVizForAll/google-sheets-geocoder) project.
 
 ## Errors / Bugs
 
